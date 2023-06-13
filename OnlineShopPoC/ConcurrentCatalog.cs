@@ -2,38 +2,34 @@
 
 namespace OnlineShopPoC
 {
-    public class Catalog
+    public class ConcurrentCatalog
     {
-        private List<Product> _products = GenerateProducts(10);
+        private ConcurrentDictionary<Guid, Product> _products = new ConcurrentDictionary<Guid, Product>(GenerateProducts(10).ToDictionary(p => p.Id));
 
-        public List<Product> GetProducts() 
-        { 
-            return _products;
+        public List<Product> GetProducts()
+        {
+            return _products.Values.ToList();
         }
 
-        public Product GetProductById(Guid id) 
+        public Product GetProductById(Guid id)
         {
-            return _products.FirstOrDefault(p => p.Id == id);
+             _products.TryGetValue(id, out Product product);
+            return product;
         }
 
         public void AddProduct(Product product)
-        { 
-            _products.Add(product); 
+        {
+            _products.TryAdd(product.Id, product);
         }
 
-        public void RemoveProduct(Guid id) 
+        public void RemoveProduct(Guid id)
         {
-            var product = _products.FirstOrDefault(p => p.Id == id);
-            if (product != null)
-            {
-                _products.Remove(product);
-            }
+            _products.TryRemove(id, out _);          
         }
 
         public void UpdateProduct(Product updatedProduct)
         {
-            var existingProduct = _products.FirstOrDefault(p => p.Id == updatedProduct.Id);
-            if (existingProduct != null)
+            if (_products.TryGetValue(updatedProduct.Id, out Product existingProduct))
             {
                 // Обновление полей товара
                 existingProduct.Name = updatedProduct.Name;

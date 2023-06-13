@@ -2,42 +2,41 @@ using Microsoft.AspNetCore.Mvc;
 using OnlineShopPoC;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
-Catalog catalog = new Catalog();
+app.UseSwagger();
+app.UseSwaggerUI();
 
+ConcurrentCatalog catalog = new ConcurrentCatalog();
+
+//RPC
 app.MapGet("/get_products", GetProducts);//получение всего каталога
+app.MapGet("/get_product_by_id", GetProductById);//получение товара по его id
 app.MapPost("/add_product", AddProduct);//добавление товара в каталог
-app.MapGet("/get_product_by_id/{id}", GetProductById);//получение товара по его id
-app.MapDelete("/remove_product/{id}", RemoveProduct);//удаление товара
-app.MapPut("/update_product", UpdateProduct);//редактирование товара
-app.MapDelete("/сlear_сatalog", ClearCatalog);//очистка каталога
+app.MapPost("/remove_product", RemoveProduct);//удаление товара
+app.MapPost("/update_product", UpdateProduct);//редактирование товара
+app.MapPost("/clear_сatalog", ClearCatalog);//очистка каталога
 
+//REST
+app.MapGet("/products", GetProducts);//получение всего каталога
+app.MapGet("/products/{productId}", GetProductById);//получение товара по его id
+app.MapPost("/products", AddProduct);//добавление товара в каталог
+app.MapDelete("/products/{productId}", RemoveProduct);//удаление товара
+app.MapPut("/products", UpdateProduct);//редактирование товара
+app.MapDelete("/products", ClearCatalog);//очистка каталога
 
 List<Product> GetProducts()
 {
     return catalog.GetProducts();
 }
 
-void AddProduct(Product product)
+string GetProductById(Guid productId)
 {
-    catalog.AddProduct(product);
-}
-
-//IActionResult AddProduct(Product product)
-//{
-//    catalog.AddProduct(product);
-//    return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
-//}
-
-void RemoveProduct(Guid id)
-{
-    catalog.RemoveProduct(id);
-}
-
-string GetProductById(Guid id)
-{
-    var product = catalog.GetProductById(id);
+    var product = catalog.GetProductById(productId);
     if (product == null)
     {
         return "Такого товара нет в каталоге!";
@@ -46,6 +45,21 @@ string GetProductById(Guid id)
     return product.ToString();
 }
 
+void AddProduct(Product product, HttpContext context)
+{
+    catalog.AddProduct(product);
+    context.Response.StatusCode = StatusCodes.Status201Created;
+}
+//IResult AddProduct(Product product)
+//{
+//    catalog.AddProduct(product);
+//    return Results.Created("/add_product", product);
+//}
+
+void RemoveProduct(Guid productId)
+{
+    catalog.RemoveProduct(productId);
+}
 
 void UpdateProduct(Product updatedProduct)
 {
@@ -56,8 +70,6 @@ void ClearCatalog()
 {
     catalog.ClearCatalog();
 }
-
-
 
 
 app.Run();
