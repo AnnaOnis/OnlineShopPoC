@@ -5,13 +5,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
+builder.Services.AddSingleton<ITimeProvider, UtcTimeProvider>();
 
 var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
 
-ConcurrentCatalog catalog = new ConcurrentCatalog();
 
 //RPC
 app.MapGet("/get_products", GetProducts);//получение всего каталога
@@ -29,12 +30,19 @@ app.MapDelete("/products/{productId}", RemoveProduct);//удаление товара
 app.MapPut("/products", UpdateProduct);//редактирование товара
 app.MapDelete("/products", ClearCatalog);//очистка каталога
 
-List<Product> GetProducts()
+app.MapGet("/get_utc_current_time", GetUTCCurrentTime);
+
+string GetUTCCurrentTime(ITimeProvider timeProvider)
+{
+    return timeProvider.GetCurrentTime().ToString();
+}
+
+List<Product> GetProducts(ICatalog catalog)
 {
     return catalog.GetProducts();
 }
 
-string GetProductById(Guid productId)
+string GetProductById(Guid productId, ICatalog catalog)
 {
     var product = catalog.GetProductById(productId);
     if (product == null)
@@ -45,28 +53,28 @@ string GetProductById(Guid productId)
     return product.ToString();
 }
 
-void AddProduct(Product product, HttpContext context)
-{
-    catalog.AddProduct(product);
-    context.Response.StatusCode = StatusCodes.Status201Created;
-}
-//IResult AddProduct(Product product)
+//void AddProduct(Product product, HttpContext context)
 //{
 //    catalog.AddProduct(product);
-//    return Results.Created("/add_product", product);
+//    context.Response.StatusCode = StatusCodes.Status201Created;
 //}
+IResult AddProduct(Product product, ICatalog catalog)
+{
+    catalog.AddProduct(product);
+    return Results.Created("/add_product", product);
+}
 
-void RemoveProduct(Guid productId)
+void RemoveProduct(Guid productId, ICatalog catalog)
 {
     catalog.RemoveProduct(productId);
 }
 
-void UpdateProduct(Product updatedProduct)
+void UpdateProduct(Product updatedProduct, ICatalog catalog)
 {
     catalog.UpdateProduct(updatedProduct);
 }
 
-void ClearCatalog()
+void ClearCatalog(ICatalog catalog)
 {
     catalog.ClearCatalog();
 }

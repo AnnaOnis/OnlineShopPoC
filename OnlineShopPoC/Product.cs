@@ -29,6 +29,12 @@
         /// <summary> Цена товара </summary>
         public decimal Price { get; set; }
 
+        /// <summary> Информация о скидках </summary>
+        public string DescriptionDiscount { get; set; }
+
+        /// <summary> Цена товара со скидкой</summary>
+        public decimal DiscountPrice { get; set; }
+
         /// <summary> Дата изготовления </summary>
         public DateTime ProducedAt { get; set; }
 
@@ -40,7 +46,7 @@
 
         public override string ToString()
         {
-            return $"{Id}  {Name}  {Description}  {Price}";
+            return $"{Id}  {Name}  {Description}  {Price}  {DiscountPrice}";
         }
 
     }

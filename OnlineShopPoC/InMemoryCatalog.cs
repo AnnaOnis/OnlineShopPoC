@@ -2,48 +2,80 @@
 
 namespace OnlineShopPoC
 {
-    public class ConcurrentCatalog
+    public class InMemoryCatalog : ICatalog
     {
         private ConcurrentDictionary<Guid, Product> _products = new ConcurrentDictionary<Guid, Product>(GenerateProducts(10).ToDictionary(p => p.Id));
+        private readonly object _lock = new object();
 
         public List<Product> GetProducts()
         {
+            lock (_lock)
+            {
+                foreach (var product in _products.Values)
+                {
+                    CalculateDiscount(product);
+                }
+            }
             return _products.Values.ToList();
         }
 
         public Product GetProductById(Guid id)
         {
-             _products.TryGetValue(id, out Product product);
+            if(_products.TryGetValue(id, out Product product))
+            {
+                lock (_lock)
+                {
+                    CalculateDiscount(product);
+                }
+            }
             return product;
         }
 
         public void AddProduct(Product product)
         {
+            lock (_lock)
+            {
+                CalculateDiscount(product);
+            }
             _products.TryAdd(product.Id, product);
         }
 
         public void RemoveProduct(Guid id)
         {
-            _products.TryRemove(id, out _);          
+            _products.TryRemove(id, out _);
         }
 
         public void UpdateProduct(Product updatedProduct)
         {
             if (_products.TryGetValue(updatedProduct.Id, out Product existingProduct))
             {
-                // Обновление полей товара
-                existingProduct.Name = updatedProduct.Name;
-                existingProduct.Description = updatedProduct.Description;
-                existingProduct.Price = updatedProduct.Price;
-                existingProduct.ProducedAt = updatedProduct.ProducedAt;
-                existingProduct.ExpiredAt = updatedProduct.ExpiredAt;
-                existingProduct.Stock = updatedProduct.Stock;
+                lock (_lock)
+                {
+                    CalculateDiscount(updatedProduct);
+                }
+                _products.TryUpdate(updatedProduct.Id, updatedProduct, existingProduct);
             }
+            
         }
 
         public void ClearCatalog()
         {
             _products.Clear();
+        }
+
+        public Product CalculateDiscount(Product product)
+        {
+            product.DiscountPrice = product.Price;
+            product.DescriptionDiscount = "Сегодня скидок нет!";
+
+            DateTime currentDate = DateTime.Now;
+            if (currentDate.DayOfWeek == DayOfWeek.Monday)
+            {
+                product.DiscountPrice -= product.Price / 100 * 30;
+                product.DescriptionDiscount = "Ура! Сегодня скидка 30%!";
+
+            }
+            return product;
         }
 
         private static List<Product> GenerateProducts(int count)
@@ -75,7 +107,9 @@ namespace OnlineShopPoC
                 var stock = random.NextDouble() * 100;
                 products[i] = new Product(name, price)
                 {
+                    DiscountPrice = price,
                     Description = "Описание " + name,
+                    DescriptionDiscount = "Сегодня скидок нет!",
                     ProducedAt = producedAt,
                     ExpiredAt = expiredAt,
                     Stock = stock
@@ -85,4 +119,5 @@ namespace OnlineShopPoC
             return products.ToList();
         }
     }
+
 }
