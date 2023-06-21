@@ -1,4 +1,6 @@
+using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
+using MimeKit;
 using OnlineShopPoC;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
 builder.Services.AddSingleton<ITimeProvider, UtcTimeProvider>();
+builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
+//builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
+builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
 
 var app = builder.Build();
 
@@ -31,6 +36,31 @@ app.MapPut("/products", UpdateProduct);//редактирование товара
 app.MapDelete("/products", ClearCatalog);//очистка каталога
 
 app.MapGet("/get_utc_current_time", GetUTCCurrentTime);
+
+app.MapGet("/send_email", SendEmail);
+
+void SendEmail()
+{
+    using var emailMessage = new MimeMessage();
+
+    emailMessage.From.Add(MailboxAddress.Parse("asp2023pv112@rodion-m.ru"));
+    emailMessage.To.Add(MailboxAddress.Parse("onischenko.anna11@gmail.com"));
+    emailMessage.Subject = "Проверка MimeKit";
+    emailMessage.Body = new TextPart()
+    {
+        Text = "Привет!"
+    };
+
+    var password = Environment.GetEnvironmentVariable("smtp_password");
+
+    using (var client = new SmtpClient())
+    {
+        client.Connect("smtp.beget.com", 25, false);
+        client.Authenticate("asp2023pv112@rodion-m.ru", password);
+        client.Send(emailMessage);
+        client.Disconnect(true);
+    }
+}
 
 string GetUTCCurrentTime(ITimeProvider timeProvider)
 {
