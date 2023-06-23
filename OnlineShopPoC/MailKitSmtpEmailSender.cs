@@ -3,12 +3,20 @@ using MailKit.Net.Smtp;
 using MimeKit.Text;
 using System.Net.Mail;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
+using Microsoft.Extensions.Options;
 
 namespace OnlineShopPoC
 {
     public class MailKitSmtpEmailSender : IEmailSender, IAsyncDisposable
     {
         private readonly SmtpClient _smtpClient = new();
+        private readonly SmtpConfig _smtpConfig;
+
+        public MailKitSmtpEmailSender(IOptionsSnapshot<SmtpConfig> options)
+        {
+            ArgumentNullException.ThrowIfNull(nameof(options));
+            _smtpConfig = options.Value;
+        }
 
 
         public async ValueTask DisposeAsync()
@@ -25,7 +33,7 @@ namespace OnlineShopPoC
 
             using var emailMessage = new MimeMessage();
 
-            emailMessage.From.Add(MailboxAddress.Parse("asp2023pv112@rodion-m.ru"));
+            emailMessage.From.Add(MailboxAddress.Parse(_smtpConfig.FromEmail));
             emailMessage.To.Add(MailboxAddress.Parse(recepientEmail));
             emailMessage.Subject = subject;
             emailMessage.Body = new TextPart()
@@ -42,13 +50,15 @@ namespace OnlineShopPoC
         {
             if(!_smtpClient.IsConnected)
             {
-                await _smtpClient.ConnectAsync("smtp.beget.com", 25, false);
+                //await _smtpClient.ConnectAsync("smtp.beget.com", 25, false);
+                await _smtpClient.ConnectAsync(_smtpConfig.Host, _smtpConfig.Port, false);
             }
 
             if (!_smtpClient.IsAuthenticated)
             {
-                var password = Environment.GetEnvironmentVariable("smtp_password");
-                await _smtpClient.AuthenticateAsync("asp2023pv112@rodion-m.ru", password);
+                //var password = Environment.GetEnvironmentVariable("smtp_password");
+                //await _smtpClient.AuthenticateAsync("asp2023pv112@rodion-m.ru", password);
+                await _smtpClient.AuthenticateAsync(_smtpConfig.UserName, _smtpConfig.Password);
             }
 
         }
