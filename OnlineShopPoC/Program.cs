@@ -2,50 +2,81 @@ using MailKit.Net.Smtp;
 using Microsoft.AspNetCore.Mvc;
 using MimeKit;
 using OnlineShopPoC;
+using OnlineShopPoC.BackgroundServices;
+using OnlineShopPoC.Decorators;
+using OnlineShopPoC.Services;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+   .WriteTo.Console()
+   .CreateBootstrapLogger(); //означает, что глобальный логер будет заменен на вариант из Host.UseSerilog
+Log.Information("Starting up");
 
-builder.Services.AddOptions<SmtpConfig>()
-    .BindConfiguration("SmtpConfig")
-    .ValidateDataAnnotations()
-    .ValidateOnStart();
+try
+{
+    var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+    builder.Host.UseSerilog((_, conf) =>
+    {
+        conf
+            .WriteTo.Console()
+            .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day);
+    });
 
-builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
-builder.Services.AddSingleton<ITimeProvider, UtcTimeProvider>();
-builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
-builder.Services.Decorate<IEmailSender, EmailSenderLoggingDecorator>();
+    builder.Services.AddOptions<SmtpConfig>()
+        .BindConfiguration("SmtpConfig")
+        .ValidateDataAnnotations()
+        .ValidateOnStart();
 
-//builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
-//builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+    builder.Services.AddSingleton<ICatalog, InMemoryCatalog>();
+    builder.Services.AddSingleton<ITimeProvider, UtcTimeProvider>();
+    builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
+    builder.Services.Decorate<IEmailSender, EmailSenderLoggingDecorator>();
 
-app.UseSwagger();
-app.UseSwaggerUI();
+    builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
+    builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
+
+    var app = builder.Build();
+
+    app.UseSwagger();
+    app.UseSwaggerUI();
 
 
-//RPC
-app.MapGet("/get_products", GetProducts);//получение всего каталога
-app.MapGet("/get_product_by_id", GetProductById);//получение товара по его id
-app.MapPost("/add_product", AddProduct);//добавление товара в каталог
-app.MapPost("/remove_product", RemoveProduct);//удаление товара
-app.MapPost("/update_product", UpdateProduct);//редактирование товара
-app.MapPost("/clear_сatalog", ClearCatalog);//очистка каталога
+    //RPC
+    app.MapGet("/get_products", GetProducts);//получение всего каталога
+    app.MapGet("/get_product_by_id", GetProductById);//получение товара по его id
+    app.MapPost("/add_product", AddProduct);//добавление товара в каталог
+    app.MapPost("/remove_product", RemoveProduct);//удаление товара
+    app.MapPost("/update_product", UpdateProduct);//редактирование товара
+    app.MapPost("/clear_сatalog", ClearCatalog);//очистка каталога
 
-//REST
-app.MapGet("/products", GetProducts);//получение всего каталога
-app.MapGet("/products/{productId}", GetProductById);//получение товара по его id
-app.MapPost("/products", AddProduct);//добавление товара в каталог
-app.MapDelete("/products/{productId}", RemoveProduct);//удаление товара
-app.MapPut("/products", UpdateProduct);//редактирование товара
-app.MapDelete("/products", ClearCatalog);//очистка каталога
+    //REST
+    app.MapGet("/products", GetProducts);//получение всего каталога
+    app.MapGet("/products/{productId}", GetProductById);//получение товара по его id
+    app.MapPost("/products", AddProduct);//добавление товара в каталог
+    app.MapDelete("/products/{productId}", RemoveProduct);//удаление товара
+    app.MapPut("/products", UpdateProduct);//редактирование товара
+    app.MapDelete("/products", ClearCatalog);//очистка каталога
 
-app.MapGet("/get_utc_current_time", GetUTCCurrentTime);
+    app.MapGet("/get_utc_current_time", GetUTCCurrentTime);
 
-app.MapGet("/send_email", SendEmail);
+    app.MapGet("/send_email", SendEmail);
+
+    app.Run();
+}
+catch(Exception ex)
+{
+    Log.Fatal(ex, "Сервер рухнул!");
+}
+finally
+{
+    Log.Information("Shut down complete");
+    await Log.CloseAndFlushAsync(); //перед выходом дожидаемся пока все логи будут записаны
+}
+
 
 async Task SendEmail (string recepientEmail, string subject, string message, IEmailSender emailSender)
 {
@@ -99,6 +130,6 @@ void ClearCatalog(ICatalog catalog)
 }
 
 
-app.Run();
+
    
 

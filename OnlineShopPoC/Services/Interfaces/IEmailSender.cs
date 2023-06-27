@@ -1,4 +1,4 @@
-﻿namespace OnlineShopPoC
+﻿namespace OnlineShopPoC.Services
 {
     public interface IEmailSender
     {

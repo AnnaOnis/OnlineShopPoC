@@ -1,4 +1,5 @@
-﻿namespace OnlineShopPoC
+﻿
+namespace OnlineShopPoC.Services
 {
     public class UtcTimeProvider : ITimeProvider
     {

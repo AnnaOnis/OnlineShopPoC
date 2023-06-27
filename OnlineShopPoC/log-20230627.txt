@@ -1,0 +1,290 @@
+2023-06-27 00:58:33.272 +03:00 [INF] Сервер успешно запущен!
+2023-06-27 00:58:33.386 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 00:58:33.391 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 00:58:33.763 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-27 00:58:33.764 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-27 00:58:33.765 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 00:58:33.765 +03:00 [INF] Hosting environment: Development
+2023-06-27 00:58:33.766 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-27 00:58:34.473 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-27 00:58:34.531 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 1148 ms
+2023-06-27 00:58:34.598 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 00:58:34.602 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 00:58:34.761 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 163 ms
+2023-06-27 00:58:34.807 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 337.9757ms
+2023-06-27 00:58:34.846 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-27 00:58:34.846 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-27 00:58:34.852 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 6.0333ms
+2023-06-27 00:58:34.899 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 52.9273ms
+2023-06-27 00:58:35.042 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-27 00:58:35.052 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 00:58:35.193 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 151.3670ms
+2023-06-27 01:00:04.195 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghbdtn&message=ghbdtn - -
+2023-06-27 01:00:04.222 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:00:04.241 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: ghbdtn, message: ghbdtn
+2023-06-27 01:00:04.641 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:00:04.673 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghbdtn&message=ghbdtn - - - 200 0 - 478.0075ms
+2023-06-27 01:01:35.217 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghbdtn&message=ghbdtn - -
+2023-06-27 01:01:35.224 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:01:35.226 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: ghbdtn, message: ghbdtn
+2023-06-27 01:01:35.561 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:01:35.589 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghbdtn&message=ghbdtn - - - 200 0 - 371.9856ms
+2023-06-27 01:02:03.326 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghbdtn&message=ghbdtn - -
+2023-06-27 01:02:03.329 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:02:03.331 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: ghbdtn, message: ghbdtn
+2023-06-27 01:02:03.866 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:02:03.869 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+MailKit.Net.Smtp.SmtpCommandException: LTD BeGet: MAIL FROM must match AUTHENTICATED USER (MAIL FROM:
+'asp2023pv112@odion-m.ru' != AUTH LOGIN: 'asp2023pv112@rodion-m.ru')
+   at MailKit.Net.Smtp.SmtpClient.SendAsync(FormatOptions options, MimeMessage message, MailboxAddress sender, IList`1 recipients, CancellationToken cancellationToken, ITransferProgress progress)
+   at MailKit.Net.Smtp.SmtpClient.SendAsync(FormatOptions options, MimeMessage message, MailboxAddress sender, IList`1 recipients, CancellationToken cancellationToken, ITransferProgress progress)
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 50
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Program.<<Main>$>g__SendEmail|0_0(String recepientEmail, String subject, String message, IEmailSender emailSender) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Program.cs:line 84
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-06-27 01:02:03.905 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghbdtn&message=ghbdtn - - - 500 - text/plain;+charset=utf-8 579.6296ms
+2023-06-27 01:04:49.319 +03:00 [INF] Сервер успешно запущен!
+2023-06-27 01:04:49.408 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 01:04:49.411 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 01:04:49.801 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-27 01:04:49.802 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-27 01:04:49.803 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 01:04:49.803 +03:00 [INF] Hosting environment: Development
+2023-06-27 01:04:49.804 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-27 01:04:50.294 +03:00 [ERR] Error sending email to: onischenko.anna11@gmail.com
+MailKit.Security.AuthenticationException: 535: Incorrect authentication data
+ ---> MailKit.Net.Smtp.SmtpCommandException: Incorrect authentication data
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 63
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 49
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 40
+2023-06-27 01:04:50.326 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 921 ms
+2023-06-27 01:04:50.329 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 01:04:50.330 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 01:04:50.579 +03:00 [ERR] Error sending email to: onischenko.anna11@gmail.com
+MailKit.Security.AuthenticationException: 535: Incorrect authentication data
+ ---> MailKit.Net.Smtp.SmtpCommandException: Incorrect authentication data
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 63
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 49
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 40
+2023-06-27 01:04:50.606 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 277 ms
+2023-06-27 01:04:50.693 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-27 01:04:50.978 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 286.8500ms
+2023-06-27 01:04:50.985 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-27 01:04:50.991 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-27 01:04:50.993 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 7.3279ms
+2023-06-27 01:04:51.036 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 45.6507ms
+2023-06-27 01:04:51.094 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-27 01:04:51.103 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 01:04:51.257 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 162.2029ms
+2023-06-27 01:12:34.567 +03:00 [INF] Сервер успешно запущен!
+2023-06-27 01:12:34.669 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 01:12:34.675 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 01:12:35.015 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-27 01:12:35.016 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-27 01:12:35.017 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 01:12:35.018 +03:00 [INF] Hosting environment: Development
+2023-06-27 01:12:35.019 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-27 01:12:35.442 +03:00 [ERR] Error sending email to: onischenko.anna11@gmail.com
+MailKit.Security.AuthenticationException: 535: Incorrect authentication data
+ ---> MailKit.Net.Smtp.SmtpCommandException: Incorrect authentication data
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 63
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 49
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 40
+2023-06-27 01:12:35.512 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 846 ms
+2023-06-27 01:12:35.515 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 01:12:35.516 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 01:12:35.772 +03:00 [ERR] Error sending email to: onischenko.anna11@gmail.com
+MailKit.Security.AuthenticationException: 535: Incorrect authentication data
+ ---> MailKit.Net.Smtp.SmtpCommandException: Incorrect authentication data
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 63
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 49
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 40
+2023-06-27 01:12:35.877 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 361 ms
+2023-06-27 01:12:35.926 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-27 01:12:36.277 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 351.5072ms
+2023-06-27 01:12:36.292 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-27 01:12:36.293 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-27 01:12:36.309 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 17.6960ms
+2023-06-27 01:12:36.352 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 58.7290ms
+2023-06-27 01:12:36.400 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-27 01:12:36.409 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 01:12:36.549 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 148.6192ms
+2023-06-27 01:13:20.876 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=hhhhhhhhhhhh&message=bbbbbbbbbbb - -
+2023-06-27 01:13:20.889 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:13:20.902 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: hhhhhhhhhhhh, message: bbbbbbbbbbb
+2023-06-27 01:13:21.363 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:13:21.365 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+MailKit.Security.AuthenticationException: 535: Incorrect authentication data
+ ---> MailKit.Net.Smtp.SmtpCommandException: Incorrect authentication data
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 63
+   at OnlineShopPoC.Implementations.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Implementations\MailKitSmtpEmailSender.cs:line 49
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Program.<<Main>$>g__SendEmail|0_0(String recepientEmail, String subject, String message, IEmailSender emailSender) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Program.cs:line 84
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-06-27 01:13:21.408 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=hhhhhhhhhhhh&message=bbbbbbbbbbb - - - 500 - text/plain;+charset=utf-8 531.6304ms
+2023-06-27 01:14:55.929 +03:00 [INF] Сервер успешно запущен!
+2023-06-27 01:14:56.096 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 01:14:56.109 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 01:14:56.523 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-27 01:14:56.524 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-27 01:14:56.524 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 01:14:56.525 +03:00 [INF] Hosting environment: Development
+2023-06-27 01:14:56.526 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-27 01:14:57.156 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-27 01:14:57.468 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 316.5791ms
+2023-06-27 01:14:57.487 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-27 01:14:57.493 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-27 01:14:57.523 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 35.9381ms
+2023-06-27 01:14:57.559 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 65.8076ms
+2023-06-27 01:14:57.605 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-27 01:14:57.612 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 01:14:57.754 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 149.0068ms
+2023-06-27 01:15:17.938 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 21844 ms
+2023-06-27 01:15:17.941 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-27 01:15:17.941 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 01:15:18.025 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 84 ms
+2023-06-27 01:16:23.482 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenk.anna11%40gmail.com&subject=hhhhhh&message=ggggggggggggg - -
+2023-06-27 01:16:23.497 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:16:23.509 +03:00 [INF] Sending email to onischenk.anna11@gmail.com, subject: hhhhhh, message: ggggggggggggg
+2023-06-27 01:16:44.915 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 01:16:44.949 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenk.anna11%40gmail.com&subject=hhhhhh&message=ggggggggggggg - - - 200 0 - 21469.0010ms
+2023-06-27 20:08:41.977 +03:00 [INF] Сервер успешно запущен!
+2023-06-27 20:08:42.097 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:08:42.489 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-27 20:08:42.490 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-27 20:08:42.491 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 20:08:42.491 +03:00 [INF] Hosting environment: Development
+2023-06-27 20:08:42.492 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-27 20:08:43.521 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-27 20:08:44.182 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 663.3041ms
+2023-06-27 20:08:44.255 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-27 20:08:44.313 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-27 20:08:44.570 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 315.2342ms
+2023-06-27 20:08:44.737 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 424.5556ms
+2023-06-27 20:08:44.804 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-27 20:08:44.814 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 20:08:45.014 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 210.4288ms
+2023-06-27 20:09:03.978 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:10:40.381 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=jjjjjj&message=ccccccccccccccc - -
+2023-06-27 20:10:40.408 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 20:10:40.427 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: jjjjjj, message: ccccccccccccccc
+2023-06-27 20:11:01.944 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 20:11:01.980 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=jjjjjj&message=ccccccccccccccc - - - 200 0 - 21599.0969ms
+2023-06-27 20:12:23.296 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghghhghhh&message=xcvbvbnm%2C - -
+2023-06-27 20:12:23.305 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 20:12:23.308 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: ghghhghhh, message: xcvbvbnm,
+2023-06-27 20:12:25.282 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 20:12:25.284 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Program.<<Main>$>g__SendEmail|0_0(String recepientEmail, String subject, String message, IEmailSender emailSender) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Program.cs:line 83
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-06-27 20:12:25.511 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghghhghhh&message=xcvbvbnm%2C - - - 500 - text/plain;+charset=utf-8 2215.0433ms
+2023-06-27 20:14:30.908 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghghhghhh&message=xcvbvbnm%2C - -
+2023-06-27 20:14:30.914 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 20:14:30.918 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: ghghhghhh, message: xcvbvbnm,
+2023-06-27 20:14:31.517 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-27 20:14:31.549 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=ghghhghhh&message=xcvbvbnm%2C - - - 200 0 - 642.3803ms
+2023-06-27 20:16:50.328 +03:00 [INF] Сервер успешно запущен!
+2023-06-27 20:16:50.402 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:16:50.698 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-27 20:16:50.699 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-27 20:16:50.700 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-27 20:16:50.701 +03:00 [INF] Hosting environment: Development
+2023-06-27 20:16:50.702 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-27 20:16:51.502 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-27 20:16:51.843 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 341.9953ms
+2023-06-27 20:16:51.854 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-27 20:16:51.854 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-27 20:16:51.865 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 10.7351ms
+2023-06-27 20:16:51.902 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 48.6922ms
+2023-06-27 20:16:51.965 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-27 20:16:51.974 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-27 20:16:52.113 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.4831ms
+2023-06-27 20:16:52.303 +03:00 [WRN] Повторная отправка сообщения: onischenko.anna11@gmail.com номер 2
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 41
+2023-06-27 20:16:53.337 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:16:54.140 +03:00 [WRN] Повторная отправка сообщения: onischenko.anna11@gmail.com номер 3
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 41
+2023-06-27 20:16:55.153 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:16:55.950 +03:00 [ERR] Ошибка отправки сообщения: onischenko.anna11@gmail.com
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 41
+2023-06-27 20:16:56.963 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:16:57.755 +03:00 [WRN] Повторная отправка сообщения: onischenko.anna11@gmail.com номер 2
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 41
+2023-06-27 20:16:58.770 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:16:59.571 +03:00 [WRN] Повторная отправка сообщения: onischenko.anna11@gmail.com номер 3
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 41
+2023-06-27 20:17:00.581 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-27 20:17:02.376 +03:00 [ERR] Ошибка отправки сообщения: onischenko.anna11@gmail.com
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at OnlineShopPoC.BackgroundServices.SalesNotificatorBackgroundService.ExecuteAsync(CancellationToken stoppingToken) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\BackgroundServices\SalesNotificatorBackgroundService.cs:line 41

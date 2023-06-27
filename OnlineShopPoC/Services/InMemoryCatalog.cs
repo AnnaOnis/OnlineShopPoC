@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 
-namespace OnlineShopPoC
+
+namespace OnlineShopPoC.Services
 {
     public class InMemoryCatalog : ICatalog
     {
@@ -21,7 +22,7 @@ namespace OnlineShopPoC
 
         public Product GetProductById(Guid id)
         {
-            if(_products.TryGetValue(id, out Product product))
+            if (_products.TryGetValue(id, out Product product))
             {
                 lock (_lock)
                 {
@@ -55,7 +56,7 @@ namespace OnlineShopPoC
                 }
                 _products.TryUpdate(updatedProduct.Id, updatedProduct, existingProduct);
             }
-            
+
         }
 
         public void ClearCatalog()

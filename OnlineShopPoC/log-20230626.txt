@@ -1,0 +1,32 @@
+2023-06-26 22:31:45.217 +03:00 [INF] Сервер успешно запущен!
+2023-06-26 22:31:45.328 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-26 22:31:45.331 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-26 22:31:45.731 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-26 22:31:45.733 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-26 22:31:45.734 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-26 22:31:45.734 +03:00 [INF] Hosting environment: Development
+2023-06-26 22:31:45.735 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-26 22:31:46.889 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger - -
+2023-06-26 22:31:47.085 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger - - - 301 0 - 197.5686ms
+2023-06-26 22:31:47.104 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-26 22:31:47.128 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 1803 ms
+2023-06-26 22:31:47.133 +03:00 [INF] Sending email to: onischenko.anna11@gmail.com
+2023-06-26 22:31:47.134 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: Промоакции, message: Список акций
+2023-06-26 22:31:47.257 +03:00 [INF] Email sent to onischenko.anna11@gmail.com in 123 ms
+2023-06-26 22:31:47.298 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 194.6516ms
+2023-06-26 22:31:47.305 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/swagger-ui.css - -
+2023-06-26 22:31:47.306 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/swagger-ui-bundle.js - -
+2023-06-26 22:31:47.307 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-26 22:31:47.307 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/swagger-ui-standalone-preset.js - -
+2023-06-26 22:31:47.315 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-26 22:31:47.317 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 10.0044ms
+2023-06-26 22:31:47.371 +03:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-06-26 22:31:47.373 +03:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-06-26 22:31:47.377 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/swagger-ui.css - - - 200 144929 text/css 71.7198ms
+2023-06-26 22:31:47.383 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 75.9952ms
+2023-06-26 22:31:47.403 +03:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-06-26 22:31:47.405 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 98.7099ms
+2023-06-26 22:31:47.450 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 135.5749ms
+2023-06-26 22:31:47.582 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-26 22:31:47.589 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-26 22:31:47.766 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 188.9321ms
