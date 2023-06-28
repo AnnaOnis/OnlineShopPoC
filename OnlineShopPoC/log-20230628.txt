@@ -1,0 +1,336 @@
+2023-06-28 17:49:58.691 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-28 17:49:58.719 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-28 17:49:58.721 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-28 17:49:58.722 +03:00 [INF] Hosting environment: Development
+2023-06-28 17:49:58.723 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-28 17:50:00.139 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-28 17:50:00.896 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 756.0031ms
+2023-06-28 17:50:00.982 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-28 17:50:00.982 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-28 17:50:01.228 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 246.1917ms
+2023-06-28 17:50:01.371 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 388.7633ms
+2023-06-28 17:50:01.447 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-28 17:50:01.458 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-28 17:50:01.659 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 211.3789ms
+2023-06-28 17:50:55.140 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=gfgfgfgf&message=mbjkufgyhfbgvhbj - -
+2023-06-28 17:50:55.164 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:50:55.363 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgf, message: mbjkufgyhfbgvhbj
+2023-06-28 17:50:57.463 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.2000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:50:57.719 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgf, message: mbjkufgyhfbgvhbj
+2023-06-28 17:50:58.517 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.4000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:50:58.930 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgf, message: mbjkufgyhfbgvhbj
+2023-06-28 17:50:59.728 +03:00 [ERR] Произошла ошибка при отправке email!
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-28 17:50:59.760 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:50:59.937 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=gfgfgfgf&message=mbjkufgyhfbgvhbj - - - 200 0 - 4797.1231ms
+2023-06-28 17:53:23.989 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=gfgfgfgf&message=mbjkufgyhfbgvhbj - -
+2023-06-28 17:53:23.992 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:53:23.994 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgf, message: mbjkufgyhfbgvhbj
+2023-06-28 17:53:25.767 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.2000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:53:25.977 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgf, message: mbjkufgyhfbgvhbj
+2023-06-28 17:53:26.775 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.4000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:53:27.196 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgf, message: mbjkufgyhfbgvhbj
+2023-06-28 17:53:28.007 +03:00 [ERR] Произошла ошибка при отправке email!
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-28 17:53:28.018 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:53:28.197 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=gfgfgfgf&message=mbjkufgyhfbgvhbj - - - 200 0 - 4210.7900ms
+2023-06-28 17:55:56.712 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-28 17:55:56.738 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-28 17:55:56.740 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-28 17:55:56.742 +03:00 [INF] Hosting environment: Development
+2023-06-28 17:55:56.743 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-28 17:55:57.459 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-28 17:55:57.742 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 284.2730ms
+2023-06-28 17:55:57.754 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-28 17:55:57.766 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-28 17:55:57.767 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 12.0404ms
+2023-06-28 17:55:57.809 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.0578ms
+2023-06-28 17:55:57.876 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-28 17:55:57.885 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-28 17:55:58.023 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 146.9528ms
+2023-06-28 17:57:03.453 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=gfgfgfgfgf&message=jgjgjjgg - -
+2023-06-28 17:57:03.462 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:57:03.528 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgfgf, message: jgjgjjgg
+2023-06-28 17:57:05.356 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.2000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:57:05.585 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgfgf, message: jgjgjjgg
+2023-06-28 17:57:06.374 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.4000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:57:06.793 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: gfgfgfgfgf, message: jgjgjjgg
+2023-06-28 17:57:07.581 +03:00 [ERR] Произошла ошибка при отправке email!
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-28 17:57:07.591 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:57:07.771 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=gfgfgfgfgf&message=jgjgjjgg - - - 200 0 - 4319.4408ms
+2023-06-28 17:58:14.109 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-28 17:58:14.173 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-28 17:58:14.176 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-28 17:58:14.178 +03:00 [INF] Hosting environment: Development
+2023-06-28 17:58:14.180 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-28 17:58:14.745 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-28 17:58:15.034 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 292.8904ms
+2023-06-28 17:58:15.055 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-28 17:58:15.060 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-28 17:58:15.064 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 9.0445ms
+2023-06-28 17:58:15.105 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 45.5436ms
+2023-06-28 17:58:15.164 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-28 17:58:15.172 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-28 17:58:15.305 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 140.7660ms
+2023-06-28 17:59:20.655 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=hhyhyh&message=jgjgjgjgjgjgj - -
+2023-06-28 17:59:20.666 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:59:20.732 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: hhyhyh, message: jgjgjgjgjgjgj
+2023-06-28 17:59:22.500 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.2000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:59:22.714 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: hhyhyh, message: jgjgjgjgjgjgj
+2023-06-28 17:59:23.518 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.4000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 17:59:23.929 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: hhyhyh, message: jgjgjgjgjgjgj
+2023-06-28 17:59:24.707 +03:00 [ERR] Произошла ошибка при отправке email!
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-28 17:59:24.715 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 17:59:24.890 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=hhyhyh&message=jgjgjgjgjgjgj - - - 200 0 - 4237.3028ms
+2023-06-28 18:00:32.541 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-28 18:00:32.566 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-28 18:00:32.568 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-28 18:00:32.569 +03:00 [INF] Hosting environment: Development
+2023-06-28 18:00:32.570 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-28 18:00:33.442 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-28 18:00:33.737 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 297.6196ms
+2023-06-28 18:00:33.749 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-28 18:00:33.776 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-28 18:00:33.782 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 33.7051ms
+2023-06-28 18:00:33.860 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 83.0709ms
+2023-06-28 18:00:33.905 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-28 18:00:33.913 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-28 18:00:34.050 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 145.3220ms
+2023-06-28 18:01:24.943 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=yyyyyyyyyyy&message=hhhhhhhhhhhhh - -
+2023-06-28 18:01:24.956 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 18:01:25.030 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: yyyyyyyyyyy, message: hhhhhhhhhhhhh
+2023-06-28 18:01:26.896 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.2000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 18:01:27.137 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: yyyyyyyyyyy, message: hhhhhhhhhhhhh
+2023-06-28 18:01:27.915 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.4000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 18:01:28.330 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: yyyyyyyyyyy, message: hhhhhhhhhhhhh
+2023-06-28 18:01:29.131 +03:00 [ERR] Произошла ошибка при отправке email!
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-28 18:01:29.138 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 18:01:29.315 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=yyyyyyyyyyy&message=hhhhhhhhhhhhh - - - 200 0 - 4379.1706ms
+2023-06-28 18:03:21.394 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-28 18:03:21.420 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-28 18:03:21.423 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-28 18:03:21.424 +03:00 [INF] Hosting environment: Development
+2023-06-28 18:03:21.426 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-28 18:03:22.411 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-28 18:03:22.705 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 294.9656ms
+2023-06-28 18:03:22.728 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-28 18:03:22.728 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-28 18:03:22.752 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 23.4620ms
+2023-06-28 18:03:22.780 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.9210ms
+2023-06-28 18:03:22.833 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-28 18:03:22.841 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-28 18:03:22.964 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.0420ms
+2023-06-28 18:04:27.074 +03:00 [INF] Now listening on: https://localhost:7163
+2023-06-28 18:04:27.095 +03:00 [INF] Now listening on: http://localhost:5105
+2023-06-28 18:04:27.097 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-06-28 18:04:27.097 +03:00 [INF] Hosting environment: Development
+2023-06-28 18:04:27.098 +03:00 [INF] Content root path: D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC
+2023-06-28 18:04:27.856 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/index.html - -
+2023-06-28 18:04:28.166 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/index.html - - - 200 - text/html;charset=utf-8 312.0665ms
+2023-06-28 18:04:28.178 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - -
+2023-06-28 18:04:28.178 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/_vs/browserLink - -
+2023-06-28 18:04:28.197 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 19.2141ms
+2023-06-28 18:04:28.251 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 71.9018ms
+2023-06-28 18:04:28.299 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - -
+2023-06-28 18:04:28.306 +03:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2023-06-28 18:04:28.431 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 131.8028ms
+2023-06-28 18:05:13.018 +03:00 [INF] Request starting HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=jgjgjgjg&message=kgklkhnkkgujyg - -
+2023-06-28 18:05:13.037 +03:00 [INF] Executing endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 18:05:13.101 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: jgjgjgjg, message: kgklkhnkkgujyg
+2023-06-28 18:05:14.989 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.2000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 18:05:15.209 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: jgjgjgjg, message: kgklkhnkkgujyg
+2023-06-28 18:05:16.024 +03:00 [WRN] Ошибка при отправке Email. Повторная попытка: "00:00:00.4000000"
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+2023-06-28 18:05:16.444 +03:00 [INF] Sending email to onischenko.anna11@gmail.com, subject: jgjgjgjg, message: kgklkhnkkgujyg
+2023-06-28 18:05:17.264 +03:00 [ERR] Произошла ошибка при отправке email!
+MailKit.Security.AuthenticationException: 535: 5.7.0 authentication failed
+ ---> MailKit.Net.Smtp.SmtpCommandException: 5.7.0 authentication failed
+   --- End of inner exception stack trace ---
+   at MailKit.Net.Smtp.SmtpClient.AuthenticateAsync(Encoding encoding, ICredentials credentials, CancellationToken cancellationToken)
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.EnsureConnectedAndAuthenticatedAsync() in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 59
+   at OnlineShopPoC.Services.MailKitSmtpEmailSender.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\MailKitSmtpEmailSender.cs:line 45
+   at OnlineShopPoC.Decorators.EmailSenderLoggingDecorator.SendEmail(String recepientEmail, String subject, String message) in D:\Учеба\ASP.NET\OnlineShopPoC\OnlineShopPoC\Services\Decorators\EmailSenderLoggingDecorator.cs:line 20
+   at Polly.AsyncPolicy.<>c__DisplayClass40_0.<<ImplementationAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Polly.Retry.AsyncRetryEngine.ImplementationAsync[TResult](Func`3 action, Context context, CancellationToken cancellationToken, ExceptionPredicates shouldRetryExceptionPredicates, ResultPredicates`1 shouldRetryResultPredicates, Func`5 onRetryAsync, Int32 permittedRetryCount, IEnumerable`1 sleepDurationsEnumerable, Func`4 sleepDurationProvider, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+   at Polly.AsyncPolicy.ExecuteAndCaptureAsync(Func`3 action, Context context, CancellationToken cancellationToken, Boolean continueOnCapturedContext)
+2023-06-28 18:05:17.272 +03:00 [INF] Executed endpoint 'HTTP: GET /send_email => SendEmail'
+2023-06-28 18:05:17.456 +03:00 [INF] Request finished HTTP/2 GET https://localhost:7163/send_email?recepientEmail=onischenko.anna11%40gmail.com&subject=jgjgjgjg&message=kgklkhnkkgujyg - - - 200 0 - 4438.4713ms

@@ -9,6 +9,7 @@ using Serilog;
 
 Log.Logger = new LoggerConfiguration()
    .WriteTo.Console()
+   .WriteTo.Seq("http://localhost:5341")
    .CreateBootstrapLogger(); //означает, что глобальный логер будет заменен на вариант из Host.UseSerilog
 Log.Information("Starting up");
 
@@ -20,6 +21,7 @@ try
     {
         conf
             .WriteTo.Console()
+            .WriteTo.Seq("http://localhost:5341")
             .WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day);
     });
 
@@ -35,9 +37,10 @@ try
     builder.Services.AddSingleton<ITimeProvider, UtcTimeProvider>();
     builder.Services.AddScoped<IEmailSender, MailKitSmtpEmailSender>();
     builder.Services.Decorate<IEmailSender, EmailSenderLoggingDecorator>();
+    builder.Services.Decorate<IEmailSender, EmailSenderRetryDecorator>();
 
-    builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
-    builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
+    //builder.Services.AddHostedService<AppStartedNotificatorBackgroundService>();
+    //builder.Services.AddHostedService<SalesNotificatorBackgroundService>();
 
     var app = builder.Build();
 
